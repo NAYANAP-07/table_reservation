@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Scrolling Images & Changing Background</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+      }
+
+      /* Navbar styles */
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: goldenrod;
+        padding: 10px 20px;
+      }
+
+      .logo img {
+        width: 150px;
+        height: 150px;
+        position: relative;
+        left: 50px;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 20px;
+      }
+
+      .nav-links a {
+        color: black;
+        text-decoration: none;
+        font-size: 28px;
+        padding: 8px 16px;
+        border-radius: 4px;
+        transition: background-color 0.3s ease;
+      }
+
+      .nav-links a:hover {
+        background-color: honeydew;
+      }
+
+      /* Welcome section */
+      .welcome {
+        width: 100%;
+        height: 100px;
+        background-color: rgb(221, 183, 86);
+        color: black;
+        font-size: 15px;
+        text-align: center;
+        font-weight: lighter;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .welcome h1 {
+        display: inline-block;
+        animation: moveRightToLeft 5s linear forwards;
+      }
+
+      @keyframes moveRightToLeft {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      /* Scrolling Images Section */
+      .scrolling-images-container {
+        width: 100%;
+        height: 300px;
+        background-color: rgb(221, 183, 86);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 20px;
+      }
+
+      .scrolling-images {
+        display: flex;
+        gap: 30px;
+        position: relative;
+        animation: scrollToCenter 4s ease-in-out forwards;
+      }
+
+      .scrolling-item {
+        width: 300px;
+        height: 300px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 50% 20% 50% 30%;
+        flex-shrink: 0;
+        box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+      }
+
+      .scrolling-item:nth-child(1) {
+        background-image: url("images/upma.jpg");
+      }
+      .scrolling-item:nth-child(2) {
+        background-image: url("images/chocoloate_milkshake.avif");
+      }
+      .scrolling-item:nth-child(3) {
+        background-image: url("images/north_indian_thali.jpg");
+      }
+      .scrolling-item:nth-child(4) {
+        background-image: url("images/sev_puri.jpg");
+      }
+
+      @keyframes scrollToCenter {
+        0% {
+          transform: translateX(100%);
+        }
+        100% {
+          transform: translateX(0%);
+        }
+      }
+
+      /* Changing Image in Div (Centered) */
+      .image-container {
+        width: 100%;
+        height: 800px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+      .swiper {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh; /* Full screen height */
+      }
+
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 600px;
+      }
+
+      .swiper-slide img {
+        max-width: 100%; /* Ensures image doesn't exceed container width */
+        max-height: 80vh; /* Keeps the image within viewport */
+        object-fit: contain; /* Prevents image distortion */
+        display: block;
+        height: 90%;
+      }
+
+      .swiper-button-next,
+      .swiper-button-prev {
+        color: black;
+        width: auto;
+        height: auto;
+        top: 130%;
+        transform: translateY(-50%);
+      }
+
+      .swiper-button-next {
+        right: 10px; /* Positioned at the corner */
+      }
+
+      .swiper-button-prev {
+        left: 10px; /* Positioned at the corner */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="navbar" style="height: 170px">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="reservation.html">Reservation</a>
+        <a href="reviews.html">Reviews</a>
+      </div>
+    </div>
+
+    <div class="welcome">
+      <h1>WELCOME TO SPICE AND BLISS</h1>
+    </div>
+
+    <!-- Scrolling Background Images Section -->
+    <div class="scrolling-images-container">
+      <div class="scrolling-images">
+        <div class="scrolling-item"></div>
+        <div class="scrolling-item"></div>
+        <div class="scrolling-item"></div>
+        <div class="scrolling-item"></div>
+      </div>
+    </div>
+    <br />
+
+    <!-- Changing Image Div -->
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide">
+          <img src="images/filter_coffee.jpg" alt="Freshly Brewed Coffee" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/pav_bhaji.jfif" alt="Cozy Cafe Interior" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/mysore_pak.webp" alt="Exotic Coffee Beans" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/vanilla_milkshake.png" alt="Latte Art" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/pistachio.jpg" alt="Latte Art" />
+        </div>
+        <div class="swiper-slide">
+          <img src="images/aloo_paratha.jpg" alt="Latte Art" />
+        </div>
+      </div>
+      <!-- Add Pagination -->
+      <div class="swiper-pagination"></div>
+      <!-- Add Navigation -->
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script>
+      const swiper = new Swiper(".swiper-container", {
+        loop: true,
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+    <footer
+      style="
+        background-color: rgb(221, 183, 86);
+        color: black;
+        padding: 40px 20px;
+        font-size: 22px;
+        text-align: center;
+      "
+    >
+      <div
+        class="footer-content"
+        style="
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          gap: 30px;
+        "
+      >
+        <!-- Contact Information -->
+        <div class="contact-info" style="flex: 1; min-width: 250px">
+          <h3 style="font-size: 32px; margin-bottom: 15px">
+            Contact Information
+          </h3>
+          <p style="font-size: 24px; margin: 5px 0">
+            Email:
+            <a
+              href="mailto:contact@spiceandbliss.com"
+              style="color: black; text-decoration: none; font-weight: bold"
+              >contact@spiceandbliss.com</a
+            >
+          </p>
+          <p style="font-size: 24px; margin: 5px 0">
+            Phone:
+            <a
+              href="tel:+1234567890"
+              style="color: black; text-decoration: none; font-weight: bold"
+              >+123-456-7890</a
+            >
+          </p>
+        </div>
+
+        <!-- Business Timings -->
+        <div class="business-timings" style="flex: 1; min-width: 250px">
+          <h3 style="font-size: 32px; margin-bottom: 15px">Business Timings</h3>
+          <p style="font-size: 24px; margin: 5px 0">
+            Monday - Friday: 10:00 AM - 8:00 PM
+          </p>
+          <p style="font-size: 24px; margin: 5px 0">
+            Saturday - Sunday: 11:00 AM - 9:00 PM
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom" style="margin-top: 30px">
+        <p style="font-size: 22px">
+          &copy; 2025 Spice and Bliss. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

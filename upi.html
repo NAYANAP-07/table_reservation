@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UPI Payment</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Container */
+    .container {
+      width: 80%;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-top: 50px;
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #666;
+      text-align: center;
+    }
+
+    /* UPI Details */
+    .upi-details {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .upi-details img {
+      width: 200px;
+      margin: 10px 0;
+    }
+
+    .upi-details p {
+      font-size: 18px;
+      color: #333;
+    }
+
+    /* UPI Payment Button */
+    .payNowButton {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .payNowButton:hover {
+      background-color: #218838;
+    }
+
+    /* Back Button */
+    #backButton {
+      background-color: #007bff;
+      text-align: center;
+    }
+
+    #backButton:hover {
+      background-color: #0069d9;
+    }
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      left: 30px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h2>Complete your UPI Payment</h2>
+      <p>
+        Your reservation is pending, please complete the payment to confirm your
+        reservation.
+      </p>
+      <div class="payment-method">
+        <h3 style="text-align: center">UPI Payment</h3>
+        <p>Please scan the QR code below to pay via UPI.</p>
+
+        <!-- Replace with your actual UPI QR code -->
+        <img src="imar.jpg" alt="UPI QR Code" class="qr-code" />
+
+        <p>
+          Or use this UPI ID for direct payment:
+          <strong>your-upi-id@bank</strong>
+        </p>
+
+        <button
+          id="payNowButton"
+          style="
+            display: block;
+            width: 100%;
+            padding: 15px;
+            font-size: 18px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 30px;
+            text-align: center;
+          "
+        >
+          Pay Now
+        </button>
+      </div>
+    </div>
+
+    <script>
+      // Handle the click event of the "Pay Now" button
+      document
+        .getElementById("payNowButton")
+        .addEventListener("click", function () {
+          // Simulating a successful UPI payment
+          // In a real scenario, the UPI payment process would happen here
+
+          // Send POST request to mark payment as completed
+          fetch("/payment", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              paymentStatus: "Completed",
+            }),
+          })
+            .then((response) => {
+              if (response.ok) {
+                // On successful payment, redirect to confirmation page
+                window.location.href = "/confirmation.html";
+              } else {
+                alert("Payment failed. Please try again.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error during payment:", error);
+              alert("An error occurred. Please try again later.");
+            });
+        });
+    </script>
+  </body>
+</html>

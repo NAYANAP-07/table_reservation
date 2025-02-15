@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Payment</title>
+  </head>
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+    }
+
+    /* Container */
+    .container {
+      width: 50%;
+      margin: 0 auto;
+      padding: 30px;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin-top: 50px;
+      text-align: center;
+      align-items: center;
+    }
+    h2 {
+      text-align: center;
+      color: #333;
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #666;
+      text-align: center;
+    }
+
+    /* Form Styles */
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      width: 50%;
+      position: relative;
+      left: 200px;
+    }
+
+    label {
+      font-size: 18px;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    input,
+    select {
+      padding: 10px;
+      font-size: 16px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+
+    button {
+      padding: 15px;
+      font-size: 18px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+
+    /* Back Button */
+    #backButton {
+      background-color: #007bff;
+    }
+
+    #backButton:hover {
+      background-color: #0069d9;
+    }
+
+    /* Payment Method Styles */
+    .payment-method {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .payment-method img {
+      width: 100px;
+      margin: 10px;
+    }
+
+    .payment-method label {
+      font-size: 18px;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 15px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <h2>Card Payment</h2>
+      <form action="/payment" method="POST">
+        <label for="cardNumber">Card Number</label><br />
+        <input
+          type="text"
+          id="cardNumber"
+          name="cardNumber"
+          required
+        /><br /><br />
+        <label for="expiryDate">Expiry Date</label><br />
+        <input
+          type="text"
+          id="expiryDate"
+          name="expiryDate"
+          required
+        /><br /><br />
+        <label for="cvv">CVV</label><br />
+        <input type="text" id="cvv" name="cvv" required /><br /><br />
+        <button id="payNowButton">Pay Now</button>
+      </form>
+    </div>
+    <script>
+      // Handle the click event of the "Pay Now" button
+      document
+        .getElementById("payNowButton")
+        .addEventListener("click", function () {
+          // Simulating a successful UPI payment
+          // In a real scenario, the UPI payment process would happen here
+
+          // Send POST request to mark payment as completed
+          fetch("/payment", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              paymentStatus: "Completed",
+            }),
+          })
+            .then((response) => {
+              if (response.ok) {
+                // On successful payment, redirect to confirmation page
+                window.location.href = "/confirmation.html";
+              } else {
+                alert("Payment failed. Please try again.");
+              }
+            })
+            .catch((error) => {
+              console.error("Error during payment:", error);
+              alert("An error occurred. Please try again later.");
+            });
+        });
+    </script>
+  </body>
+</html>

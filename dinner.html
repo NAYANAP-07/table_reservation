@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dinner Menu | Spice & Bliss</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: goldenrod;
+      padding: 10px 20px;
+    }
+
+    .logo img {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      left: 50px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: black;
+      text-decoration: none;
+      font-size: 28px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: honeydew;
+    }
+    .hero {
+      background-color: rgb(221, 183, 86);
+      text-align: center;
+      color: black;
+      padding: 100px 20px;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 18px;
+    }
+
+    /* Menu Section */
+    .menu {
+      text-align: center;
+      padding: 50px;
+    }
+
+    .menu h2 {
+      font-size: 32px;
+      margin-bottom: 20px;
+      color: #8b0000;
+    }
+
+    .menu-category {
+      margin-bottom: 40px;
+    }
+
+    .menu-category h3 {
+      font-size: 26px;
+      color: #8b0000;
+    }
+
+    .menu-items {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .item {
+      width: 200px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .item img {
+      width: 100%;
+      height: 140px;
+      border-radius: 8px;
+      object-fit: cover;
+    }
+
+    .item p {
+      font-size: 16px;
+      margin-top: 10px;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgb(221, 183, 86);
+      color: black;
+      text-align: center;
+      padding: 15px;
+      margin-top: 30px;
+    }
+  </style>
+  <body>
+    <!-- Navbar -->
+    <div class="navbar" style="height: 170px">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="reservation.html">Reservation</a>
+        <a href="reviews.html">Reviews</a>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <h1>Vegetarian Dinner Delights</h1>
+      <p>Indulge in a delicious vegetarian dinner, bursting with flavor!</p>
+    </section>
+
+    <!-- Dinner Menu Section -->
+    <section class="menu">
+      <h2>Our Dinner Specialties</h2>
+
+      <div class="menu-category">
+        <h3>🍽️ South Indian Delights</h3>
+        <div class="menu-items">
+          <div class="item">
+            <img src="images/vegetable_biriyani.jpg" alt="Vegetable Biryani" />
+            <p>
+              <b>Vegetable Biryani</b><br />Fragrant rice dish with mixed
+              vegetables and spices
+            </p>
+          </div>
+          <div class="item">
+            <img
+              src="images/vegetable_kofta_curry.jpg"
+              alt="Vegetable Kofta Curry"
+            />
+            <p>
+              <b>Vegetable Kofta Curry</b><br />Deep-fried vegetable balls in a
+              creamy curry
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/sambar_rice.jpg" alt="Sambar Rice" />
+            <p><b>Sambar Rice</b><br />Rice cooked with spicy lentil soup</p>
+          </div>
+          <div class="item">
+            <img src="images/curd_rice.jpg" alt="Curd Rice" />
+            <p>
+              <b>Curd Rice</b><br />Rice with yogurt and seasoned with mustard
+              seeds
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3>🍽️ North Indian Classics</h3>
+        <div class="menu-items">
+          <div class="item">
+            <img src="images/jeera_rice.jpg" alt="Jeera Rice" />
+            <p>
+              <b>Jeera Rice</b><br />Fragrant basmati rice tempered with cumin
+              seeds, perfect as a side dish.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/ghee_rice.jpg" alt="Ghee Rice" />
+            <p>
+              <b>Ghee Rice</b><br />Rice cooked in ghee, with aromatic spices,
+              giving it a rich, indulgent flavor.
+            </p>
+          </div>
+          <div class="item">
+            <img
+              src="images/paneer_butter_masala.jpg"
+              alt="Paneer Butter Masala"
+            />
+            <p>
+              <b>Paneer Butter Masala</b><br />Soft paneer cubes cooked in a
+              creamy tomato-based gravy with butter and spices.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/naan.jfif" alt="Naan" />
+            <p>
+              <b>Naan</b><br />Soft, fluffy flatbread, perfect for dipping into
+              your favorite curries.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/kulcha.jpg" alt="Kulcha" />
+            <p>
+              <b>Kulcha</b><br />Leavened bread, stuffed with various fillings
+              like potatoes or paneer, and baked to perfection.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/palak_paneer.jpg" alt="Palak Paneer" />
+            <p>
+              <b>Palak Paneer</b><br />Paneer cooked in a smooth, flavorful
+              spinach gravy with traditional spices.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/dal_tadka.jpg" alt="Dal Tadka" />
+            <p>
+              <b>Dal Tadka</b><br />Yellow lentils cooked with spices and
+              finished with a tempering of ghee, garlic, and cumin.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/kaju_masala.avif" alt="Kaju Masala" />
+            <p>
+              <b>Kaju Masala</b><br />Cashews cooked in a rich, creamy
+              tomato-based gravy, perfect with roti or rice.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="menu-category">
+        <h3>🍜 Chinese Delights</h3>
+        <div class="menu-items">
+          <div class="item">
+            <img src="images/vegetable_noodles.jpg" alt="Vegetable Noodles" />
+            <p>
+              <b>Vegetable Noodles</b><br />Stir-fried noodles with a mix of
+              colorful vegetables, seasoned with soy sauce and spices.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/ramen_noodles.jpg" alt="Ramen Noodles" />
+            <p>
+              <b>Ramen Noodles</b><br />A flavorful bowl of ramen noodles in a
+              light broth, with vegetables and garnished with herbs.
+            </p>
+          </div>
+          <div class="item">
+            <img
+              src="images/vegetable_fried_rice.jpg"
+              alt="Vegetable Fried Rice"
+            />
+            <p>
+              <b>Vegetable Fried Rice</b><br />Stir-fried rice with mixed
+              vegetables, a perfect balance of flavor and texture.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/spring_rolls.jpeg" alt="Vegetable Spring Rolls" />
+            <p>
+              <b>Vegetable Spring Rolls</b><br />Crispy fried rolls stuffed with
+              a mixture of sautéed vegetables, served with dipping sauce.
+            </p>
+          </div>
+          <div class="item">
+            <img
+              src="images/sweet_and_sour_vegetables.webp"
+              alt="Sweet and Sour Vegetables"
+            />
+            <p>
+              <b>Sweet and Sour Vegetables</b><br />Crispy vegetables tossed in
+              a tangy, sweet, and sour sauce with a blend of spices.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3>🍽️ Thali</h3>
+        <div class="menu-items">
+          <div class="item">
+            <img src="images/north_indian_thali.jpg" alt="North Indian Thali" />
+            <p>
+              <b>North Indian Thali</b><br />A perfect assortment of dishes from
+              the North, including curries, rice, bread, and dessert.
+            </p>
+          </div>
+          <div class="item">
+            <img
+              src="images/south_indian_thali.webp"
+              alt="South Indian Thali"
+            />
+            <p>
+              <b>South Indian Thali</b><br />A delightful mix of traditional
+              South Indian dishes, served with rice, curries, and chutneys.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3>🍦 Ice Cream</h3>
+        <div class="menu-items">
+          <div class="item">
+            <img src="images/vanilla.jpg" alt="Vanilla Ice Cream" />
+            <p>
+              <b>Vanilla Ice Cream</b><br />A classic, creamy vanilla ice cream
+              made with real vanilla beans.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/chocolate.avif" alt="Chocolate Ice Cream" />
+            <p>
+              <b>Chocolate Ice Cream</b><br />Rich and indulgent chocolate ice
+              cream made with premium cocoa.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/strawberry.jpg" alt="Strawberry Ice Cream" />
+            <p>
+              <b>Strawberry Ice Cream</b><br />Smooth and refreshing strawberry
+              ice cream made with fresh berries.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/mango.webp" alt="Mango Ice Cream" />
+            <p>
+              <b>Mango Ice Cream</b><br />A tropical delight with the sweetness
+              of ripe mangoes in a creamy base.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/green_tea.webp" alt="Green Tea Ice Cream" />
+            <p>
+              <b>Green Tea Ice Cream</b><br />A delicate and earthy ice cream
+              with the subtle flavor of matcha green tea.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/coffee.jpg" alt="Coffee Ice Cream" />
+            <p>
+              <b>Coffee Ice Cream</b><br />Smooth and creamy coffee-flavored ice
+              cream for coffee lovers.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/pistachio.jpg" alt="Pistachio Ice Cream" />
+            <p>
+              <b>Pistachio Ice Cream</b><br />A rich and nutty ice cream made
+              with roasted pistachios.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/caramel.jpg" alt="Caramel Ice Cream" />
+            <p>
+              <b>Caramel Ice Cream</b><br />Sweet and velvety ice cream with a
+              rich caramel flavor.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/black_currant.jpg" alt="Black Currant Ice Cream" />
+            <p>
+              <b>Black Currant Ice Cream</b><br />A refreshing, tangy ice cream
+              made with ripe black currants for a unique flavor.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/oreo.webp" alt="Oreo Ice Cream" />
+            <p>
+              <b>Oreo Ice Cream</b><br />Ice cream with chunks of Oreo cookies
+              in a creamy vanilla base.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3>🥤 Milkshakes</h3>
+        <div class="menu-items">
+          <div class="item">
+            <img src="images/vanilla_milkshake.png" alt="Vanilla Milkshake" />
+            <p>
+              <b>Vanilla Milkshake</b><br />A creamy, rich milkshake made with
+              real vanilla ice cream and fresh milk.
+            </p>
+          </div>
+          <div class="item">
+            <img
+              src="images/chocoloate_milkshake.avif"
+              alt="Chocolate Milkshake"
+            />
+            <p>
+              <b>Chocolate Milkshake</b><br />A decadent chocolate milkshake
+              made with rich chocolate ice cream and milk.
+            </p>
+          </div>
+          <div class="item">
+            <img
+              src="images/strawberry_milkshake1.jpg"
+              alt="Strawberry Milkshake"
+            />
+            <p>
+              <b>Strawberry Milkshake</b><br />A refreshing milkshake made with
+              fresh strawberries and creamy milk.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/mango_milkshake.webp" alt="Mango Milkshake" />
+            <p>
+              <b>Mango Milkshake</b><br />A tropical milkshake made with ripe
+              mangoes and chilled milk, perfect for summer.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/coffee_milkshake.jpg" alt="Coffee Milkshake" />
+            <p>
+              <b>Coffee Milkshake</b><br />A smooth and energizing milkshake
+              with a strong coffee flavor, blended with milk and ice cream.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3>🍲 Chats</h3>
+        <div class="menu-items">
+          <div class="item">
+            <img src="images/pani_puri.jpg" alt="Pani Puri" />
+            <p>
+              <b>Pani Puri</b><br />Crispy puris filled with tangy, spicy, and
+              sweet flavored water, served with mashed potatoes and chickpeas.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/masala_puri.png" alt="Masala Puri" />
+            <p>
+              <b>Masala Puri</b><br />A spicy and flavorful chaat made with
+              crushed puris, green peas masala, and topped with sev and onions.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/sev_puri.jpg" alt="Sev Puri" />
+            <p>
+              <b>Sev Puri</b><br />Crispy puris topped with mashed potatoes,
+              chutneys, onions, and crunchy sev.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/dahi_puri.webp" alt="Dahi Puri" />
+            <p>
+              <b>Dahi Puri</b><br />A refreshing chaat with crispy puris filled
+              with curd, chutneys, and sev.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/pav_bhaji.jfif" alt="Pav Bhaji" />
+            <p>
+              <b>Pav Bhaji</b><br />A delicious and buttery mashed vegetable
+              curry served with soft pav buns.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-category">
+        <h3>🍨 Indian Sweets</h3>
+        <div class="menu-items">
+          <div class="item">
+            <img src="images/gulab_jamun.jpg" alt="Gulab Jamun" />
+            <p>
+              <b>Gulab Jamun</b><br />Soft fried dough balls soaked in sugar
+              syrup
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/rasgulla.jpg" alt="Rasgulla" />
+            <p><b>Rasgulla</b><br />Spongy and sweet cheese balls</p>
+          </div>
+          <div class="item">
+            <img src="images/jalebi.jpg" alt="Jalebi" />
+            <p>
+              <b>Jalebi</b><br />Crispy, deep-fried spirals soaked in
+              saffron-flavored sugar syrup.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/kaju_katli.jpg" alt="Kaju Katli" />
+            <p>
+              <b>Kaju Katli</b><br />A rich and smooth cashew-based sweet topped
+              with edible silver foil.
+            </p>
+          </div>
+          <div class="item">
+            <img src="images/mysore_pak.webp" alt="Mysore Pak" />
+            <p>
+              <b>Mysore Pak</b><br />A famous South Indian sweet made with gram
+              flour, ghee, and sugar.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer
+      style="
+        background-color: rgb(221, 183, 86);
+        color: black;
+        padding: 40px 20px;
+        font-size: 22px;
+        text-align: center;
+      "
+    >
+      <div
+        class="footer-content"
+        style="
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          gap: 30px;
+        "
+      >
+        <!-- Contact Information -->
+        <div class="contact-info" style="flex: 1; min-width: 250px">
+          <h3 style="font-size: 32px; margin-bottom: 15px">
+            Contact Information
+          </h3>
+          <p style="font-size: 24px; margin: 5px 0">
+            Email:
+            <a
+              href="mailto:contact@spiceandbliss.com"
+              style="color: black; text-decoration: none; font-weight: bold"
+              >contact@spiceandbliss.com</a
+            >
+          </p>
+          <p style="font-size: 24px; margin: 5px 0">
+            Phone:
+            <a
+              href="tel:+1234567890"
+              style="color: black; text-decoration: none; font-weight: bold"
+              >+123-456-7890</a
+            >
+          </p>
+        </div>
+
+        <!-- Business Timings -->
+        <div class="business-timings" style="flex: 1; min-width: 250px">
+          <h3 style="font-size: 32px; margin-bottom: 15px">Business Timings</h3>
+          <p style="font-size: 24px; margin: 5px 0">
+            Monday - Friday: 10:00 AM - 8:00 PM
+          </p>
+          <p style="font-size: 24px; margin: 5px 0">
+            Saturday - Sunday: 11:00 AM - 9:00 PM
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom" style="margin-top: 30px">
+        <p style="font-size: 22px">
+          &copy; 2025 Spice and Bliss. All rights reserved.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

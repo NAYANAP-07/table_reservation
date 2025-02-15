@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reservation Confirmation</title>
+    <link rel="stylesheet" href="styles.css" />
+    <style>
+  /* General Styles */
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* Container */
+  .container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 30px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 50px;
+    text-align: center;
+  }
+   .logo {
+        width: 150px;
+        height: auto;
+        margin-bottom: 20px;
+      }
+
+  h2 {
+    font-size: 36px;
+    color: #333;
+  }
+
+  p {
+    font-size: 18px;
+    color: #666;
+    margin: 15px 0;
+  }
+
+  h3 {
+    font-size: 22px;
+    color: #333;
+    margin-top: 20px;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    font-size: 18px;
+  }
+
+  li {
+    margin-bottom: 10px;
+    color: #333;
+  }
+
+  /* Confirmation Message */
+  .confirmation-message {
+    font-size: 24px;
+    color: #28a745;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  .error-message {
+    font-size: 24px;
+    color: #dc3545;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+
+  /* Print Button */
+  .print-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 30px;
+    text-decoration: none;
+  }
+
+  .print-button:hover {
+    background-color: #0069d9;
+  }
+
+  /* Back Button */
+  #backButton {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  #backButton:hover {
+    background-color: #218838;
+  }
+  #printButton {
+    display: inline-block;
+    background-color: #28a745;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+
+  #printButton:hover {
+    background-color: #218838;
+  }
+
+  /* Media Query to hide the 'Go Back' button when printing */
+  @media print {
+    #backButton {
+      display: none; /* Hide the 'Go Back' button when printing */
+    }
+    #printButton{
+        display: none;
+    }
+  }
+</style>
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Logo -->
+      <img src="logo.jpg" alt="Logo" class="logo" />
+
+      <h2>Reservation Confirmed</h2>
+      <p>Thank you for your payment! Your reservation is confirmed.</p>
+
+      <div id="reservationDetails" class="details">
+        <h3>Reservation Details</h3>
+        <ul>
+          <li><strong>Name:</strong> <span id="name"></span></li>
+          <li><strong>Phone:</strong> <span id="phone"></span></li>
+          <li><strong>Date:</strong> <span id="date"></span></li>
+          <li><strong>Time:</strong> <span id="time"></span></li>
+          <li><strong>Table Size:</strong> <span id="tableSize"></span></li>
+          <li><strong>Table Number:</strong> <span id="tableNumber"></span></li>
+          <li>
+            <strong>Payment Method:</strong> <span id="paymentMethod"></span>
+          </li>
+          <li><strong>Status:</strong> <span id="paymentStatus"></span></li>
+        </ul>
+      </div>
+
+      <button id="backButton">Go Back</button>
+      <button id="printButton">Print Reservation</button>
+      <!-- New Print Button -->
+    </div>
+
+    <script>
+      // Function to fetch reservation details from the session
+      function fetchReservationDetails() {
+        fetch("/reservation") // Fetch reservation data from the session
+          .then((response) => response.json())
+          .then((reservationData) => {
+            // Populate reservation details with the data from the server
+            document.getElementById("name").textContent = reservationData.name;
+            document.getElementById("phone").textContent =
+              reservationData.phone;
+            document.getElementById("date").textContent = reservationData.date;
+            document.getElementById("time").textContent = reservationData.time;
+            document.getElementById("tableSize").textContent =
+              reservationData.tableSize;
+            document.getElementById("tableNumber").textContent =
+              reservationData.tableNumber; // Display the table number
+            document.getElementById("paymentMethod").textContent =
+              reservationData.paymentMethod;
+            document.getElementById("paymentStatus").textContent =
+              reservationData.paymentStatus;
+          })
+          .catch((error) => {
+            console.error("Error fetching reservation:", error);
+            alert("Error fetching reservation details.");
+          });
+      }
+
+      // Call the function to display reservation details
+      fetchReservationDetails();
+
+      // Back button functionality (goes to the home page)
+      document
+        .getElementById("backButton")
+        .addEventListener("click", function () {
+          window.location.href = "/"; // Redirect to the homepage
+        });
+
+      // Print button functionality
+      document
+        .getElementById("printButton")
+        .addEventListener("click", function () {
+          window.print(); // Trigger print dialog
+        });
+    </script>
+  </body>
+</html>

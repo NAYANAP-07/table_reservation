@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Customer Reviews - Spice and Bliss</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <h2>Customer Reviews</h2>
+
+    <!-- Review Form -->
+    <div id="review-form">
+      <input type="text" id="name" placeholder="Your Name" required />
+      <div id="star-rating">
+        <span class="star" onclick="setRating(1)">★</span>
+        <span class="star" onclick="setRating(2)">★</span>
+        <span class="star" onclick="setRating(3)">★</span>
+        <span class="star" onclick="setRating(4)">★</span>
+        <span class="star" onclick="setRating(5)">★</span>
+      </div>
+      <textarea
+        id="review-text"
+        placeholder="Write your experience..."
+        required
+      ></textarea>
+      <button onclick="submitReview()">Submit Review</button>
+    </div>
+
+    <!-- Reviews Display Section -->
+    <h3>What Our Customers Say:</h3>
+    <div id="reviews-container"></div>
+
+    <script src="reviews.js"></script>
+  </body>
+</html>

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About Us - Spice and Bliss</title>
+  </head>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Navbar styles */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background-color: goldenrod;
+      padding: 10px 20px;
+    }
+
+    .logo img {
+      width: 150px;
+      height: 150px;
+      position: relative;
+      left: 50px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .nav-links a {
+      color: black;
+      text-decoration: none;
+      font-size: 28px;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: background-color 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      background-color: honeydew;
+    }
+    .hero {
+      background-color: #fdf6e3;
+      color: black;
+      padding-left: 20px;
+      margin-top: -10px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+
+    .hero h2 {
+      font-size: 2.5em;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+    }
+
+    /* Story Section */
+    .our-story {
+      padding:  20px;
+      background-color: #fdf6e3;
+    }
+
+    /* Chef’s Special */
+    .chefs-special {
+      background-color: #f4e1d2;
+      padding: 40px 20px;
+    }
+
+    .specialties {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .dish {
+      max-width: 300px;
+    }
+
+    .dish img {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .dish h3 {
+      margin: 10px 0;
+    }
+
+    /* Testimonials */
+    .testimonials {
+      padding: 40px 20px;
+      background-color: #fdf6e3;
+      font-style: italic;
+    }
+
+    /* Location */
+    .location {
+      padding: 40px 20px;
+      background-color: #f8f1e7;
+    }
+  </style>
+  <body>
+    <div class="navbar" style="height: 170px">
+      <div class="logo">
+        <img src="logo.jpg" alt="Logo" />
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="menu.html">Menu</a>
+        <a href="reservation.html">Reservation</a>
+        <a href="reviews.html">Reviews</a>
+      </div>
+    </div>
+
+    <section class="hero">
+      <h2>Welcome to Spice and Bliss</h2>
+      <p style="font-size: 20px;">Experience the perfect blend of spices and flavors.</p>
+    
+
+   
+      <h2>Our Story</h2>
+      <p style="font-size: 20px;">
+        Spice and Bliss is a haven for food lovers, offering a perfect blend of rich flavors and warm hospitality. Nestled in a welcoming ambiance, our restaurant brings you an exquisite culinary experience with dishes crafted from the finest ingredients. From aromatic Indian delicacies to global favorites, our menu is designed to delight every palate. Our chefs are passionate about creating mouthwatering dishes that celebrate tradition while embracing innovation. Whether you’re here for a cozy family dinner or a special celebration, we ensure a memorable dining experience. Our commitment to quality, freshness, and exceptional service sets us apart. Every meal at Spice and Bliss is a journey of taste, crafted with love and authenticity. Our elegant interiors and soothing atmosphere make every visit a delightful escape. Come and indulge in an unforgettable feast that brings together the best of flavors and hospitality. At Spice and Bliss, every bite is a moment of joy!
+
+
+
+
+
+
+
+
+      </p>
+    </section>
+
+    <section class="chefs-special">
+      <h2>Chef’s Special</h2>
+      <div class="specialties">
+        <div class="dish">
+          <img src="images/chole_bhature.jpg" alt="Signature Dish" height="300px" />
+          <h3>Signature Dish</h3>
+          <p>A flavorful combination of spices and fresh ingredients.</p>
+        </div>
+        <div class="dish">
+          <img src="images/spring_rolls.jpeg" alt="Chef’s Favorite"  style="width: 300px;height: 300px;"/>
+          <h3>Chef’s Favorite</h3>
+          <p>Hand-picked seasonal flavors for an unforgettable taste.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials">
+      <h2>What Our Customers Say</h2>
+      <p>
+        “An amazing experience! The food was absolutely delicious, and the
+        ambiance was perfect.” - Sarah K.
+      </p>
+      <p>
+        “Authentic flavors and great hospitality. Definitely coming back!” -
+        James R.
+      </p>
+    </section>
+
+    <footer
+      style="
+        background-color: rgb(221, 183, 86);
+        color: black;
+        padding: 40px 20px;
+        font-size: 22px;
+        text-align: center;
+      "
+    >
+      <div
+        class="footer-content"
+        style="
+          display: flex;
+          justify-content: space-around;
+          flex-wrap: wrap;
+          gap: 30px;
+        "
+      >
+        <!-- Contact Information -->
+        <div class="contact-info" style="flex: 1; min-width: 250px">
+          <h3 style="font-size: 32px; margin-bottom: 15px">
+            Contact Information
+          </h3>
+          <p style="font-size: 24px; margin: 5px 0">
+            Email:
+            <a
+              href="mailto:contact@spiceandbliss.com"
+              style="color: black; text-decoration: none; font-weight: bold"
+              >contact@spiceandbliss.com</a
+            >
+          </p>
+          <p style="font-size: 24px; margin: 5px 0">
+            Phone:
+            <a
+              href="tel:+1234567890"
+              style="color: black; text-decoration: none; font-weight: bold"
+              >+123-456-7890</a
+            >
+          </p>
+        </div>
+
+        <!-- Business Timings -->
+        <div class="business-timings" style="flex: 1; min-width: 250px">
+          <h3 style="font-size: 32px; margin-bottom: 15px">Business Timings</h3>
+          <p style="font-size: 24px; margin: 5px 0">
+            Monday - Friday: 10:00 AM - 8:00 PM
+          </p>
+          <p style="font-size: 24px; margin: 5px 0">
+            Saturday - Sunday: 11:00 AM - 9:00 PM
+          </p>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom" style="margin-top: 30px">
+        <p style="font-size: 22px">
+          &copy; 2025 Spice and Bliss. All rights reserved.
+        </p>
+      </div>
+    </footer>
+
+</html>
